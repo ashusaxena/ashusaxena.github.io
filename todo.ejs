@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <title>My todolist</title>
+        <style>
+            a {text-decoration: none; color: black;}
+        </style>
+    </head>
+
+    <body><div class="container">
+  <h2>My to App</h2>
+  <div class="panel panel-default">
+    <div class="panel-body">
+         <ul>
+        <% todolist.forEach(function(todo, index) { %>
+           <li> <a href="/todo/delete/<%= index %>"><%= todo %><i class="fa fa-trash-o" aria-hidden="true"></i></a></li>
+        <% }); %>
+        </ul>
+    </div>
+  </div>
+</div>
+
+        
+ 
+
+        
+
+        <form action="/todo/add/" method="post">
+            <p><center>
+                <label for="newtodo">What should I do?</label>
+                <input type="text" name="newtodo" id="newtodo" autofocus />
+                <input type="submit" /></center
+            </p>
+        </form>
+    </body>
+</html>
